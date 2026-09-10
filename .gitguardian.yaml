@@ -1,0 +1,13 @@
+version: 2
+
+# Both entries below are documented as public/non-sensitive at their source:
+# - src/fantabot/config.py: the local dev-only Postgres default (docker-compose,
+#   127.0.0.1:54321, never used outside a developer's machine).
+# - src/fantabot/adapters/http/apileague.py: APP_KEY, a constant shipped in
+#   leghe.fantacalcio.it's own public frontend JS bundle.
+secret:
+  ignored-matches:
+    - name: "local dev-only Postgres default (docker-compose)"
+      match: "postgres:postgres"
+    - name: "leghe.fantacalcio.it app_key (public, shipped in their JS bundle)"
+      match: "ICiELOObd5DF5uJEATi77CRvHiiRuMU0"
